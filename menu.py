@@ -256,9 +256,10 @@ while ordering:
                         
                         #check if this item has alrady been ordered
                         existing_items = [item['Item Name']for item in items_ordered]
+                        
                         if item_ordered['Item Name'] in existing_items:
                             #if it has, just update the quantity
-                            items_ordered[existing_items.count(item_ordered['Item Name'])]['Quantity'] +=  item_ordered['Quantity']
+                            items_ordered[existing_items.index(item_ordered['Item Name'])]['Quantity'] += item_ordered['Quantity']
                         else:
                             #else add to list of items ordered
                             items_ordered.append(item_ordered)
